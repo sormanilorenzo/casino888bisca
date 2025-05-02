@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisca 888 - Il Casinò più esclusivo di Roma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e stili base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        /* Personalizzazione barra di scorrimento */
+        ::-webkit-scrollbar {
+            width: 12px;
+            background-color: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #0a0a0a;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #000000;
+            border: 2px solid #c9a536;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #111111;
+            box-shadow: 0 0 5px rgba(201, 165, 54, 0.5);
+        }
+
+        /* Per Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #000000 #0a0a0a;
+        }
+
+        /* Importazione dei font */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid #c9a536;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 400;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c9a536;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #c9a536;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #e0e0e0;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: url('image/hero.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 70px;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #c9a536;
+            text-shadow: 0 0 15px rgba(201, 165, 54, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #c9a536;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid #c9a536;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #c9a536;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(201, 165, 54, 0.3);
+        }
+
+        /* Sezione Comune */
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: #c9a536;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #c9a536;
+        }
+
+        /* Animazione fiches */
+        .fiches-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .fiche {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            z-index: -1;
+            animation: falling linear infinite;
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(calc(100vh + 100px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Sezione Attività */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .activity-card {
+            background-color: rgba(15, 15, 15, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(201, 165, 54, 0.3);
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(201, 165, 54, 0.3);
+            border-color: #c9a536;
+        }
+
+        .activity-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .activity-content {
+            padding: 20px;
+        }
+
+        .activity-content h3 {
+            font-size: 1.5rem;
+            color: #c9a536;
+            margin-bottom: 10px;
+        }
+
+        .activity-content p {
+            color: #c0c0c0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Sezione Stanze */
+        .rooms-carousel {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .room-card {
+            width: 350px;
+            background-color: rgba(15, 15, 15, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(201, 165, 54, 0.3);
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(201, 165, 54, 0.3);
+            border-color: #c9a536;
+        }
+
+        .room-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .room-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .room-content h3 {
+            font-size: 1.8rem;
+            color: #c9a536;
+            margin-bottom: 10px;
+        }
+
+        .room-content p {
+            color: #c0c0c0;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .room-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #e0e0e0;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* Sezione Cassa */
+        .cashier {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: rgba(15, 15, 15, 0.9);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(201, 165, 54, 0.5);
+        }
+
+        .cashier h3 {
+            font-size: 2.5rem;
+            color: #c9a536;
+            margin-bottom: 20px;
+        }
+
+        .cashier p {
+            color: #e0e0e0;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            width: 300px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit:hover {
+            background-color: rgba(201, 165, 54, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .benefit i {
+            font-size: 2rem;
+            color: #c9a536;
+            margin-right: 15px;
+        }
+
+        .benefit p {
+            margin: 0;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #c9a536;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(201, 165, 54, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 2px solid #c9a536;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            color: #c9a536;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #c9a536;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(201, 165, 54, 0.2);
+            color: #c9a536;
+            border-radius: 50%;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #c9a536;
+            color: #000;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: #888;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Audio player */
+        .audio-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(201, 165, 54, 0.5);
+        }
+
+        .audio-control {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #c9a536;
+            border: none;
+            color: #000;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .audio-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(201, 165, 54, 0.5);
+        }
+
+        .volume-control {
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .volume-slider {
+            width: 80px;
+            margin-left: 10px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            background: rgba(201, 165, 54, 0.3);
+            height: 5px;
+            border-radius: 5px;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #c9a536;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                border-bottom: 2px solid #c9a536;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .activities-grid, .rooms-carousel {
+                grid-template-columns: 1fr;
+            }
+
+            .room-card {
+                width: 100%;
+            }
+
+            .benefits {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .benefit {
+                width: 100%;
+            }
+
+            .cashier {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 60px 15px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .audio-player {
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .volume-control {
+                display: none;
+            }
+        }
+
+        /* Stile per il pulsante e il popup delle regole */
+        .rules-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #c9a536;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid #c9a536;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .rules-btn:hover {
+            background-color: transparent;
+            color: #c9a536;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(201, 165, 54, 0.3);
+        }
+
+        .rules-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rules-content {
+            background-color: #0f0f0f;
+            border: 2px solid #c9a536;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 0 30px rgba(201, 165, 54, 0.5);
+        }
+
+        .rules-content h4 {
+            color: #c9a536;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .rules-content p {
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .rules-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid rgba(201, 165, 54, 0.3);
+        }
+
+        .close-rules {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #c9a536;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-rules:hover {
+            transform: scale(1.2);
+            color: #e0e0e0;
+        }
+
+        /* Stili per la sezione Eventi Settimanali */
+        .weekly-calendar {
+            margin: 30px 0 60px;
+            position: relative;
+        }
+
+        .calendar-track {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .calendar-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #c9a536;
+            transform: translateY(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(201, 165, 54, 0.4);
+        }
+
+        .day-markers {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .day-marker {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 5;
+        }
+
+        .day-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0f0f0f;
+            border: 2px solid #c9a536;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .day-circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(201, 165, 54, 0.7);
+        }
+
+        .day-name {
+            color: #c9a536;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .day-event-preview {
+            width: 75px;
+            height: 75px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            transform: translateY(50px); /* Spostato in basso di 50px */
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(201, 165, 54, 0.5);
+            cursor: pointer;
+        }
+
+        .day-event-preview.has-event {
+            opacity: 1;
+            transform: translateY(10px); /* Mantenuto uguale per coerenza */
+        }
+
+        .day-circle.has-event {
+            background-color: #c9a536;
+        }
+
+        .day-circle.has-event .day-name {
+            color: #000;
+        }
+
+        /* Popup Eventi */
+        .event-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .event-content {
+            background-color: #0f0f0f;
+            border: 2px solid #c9a536;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 0 30px rgba(201, 165, 54, 0.5);
+        }
+
+        .event-time {
+            color: #c9a536;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .event-time i {
+            margin-right: 5px;
+        }
+
+        .event-flyer {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid rgba(201, 165, 54, 0.3);
+        }
+
+        .event-content h4 {
+            color: #c9a536;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .event-content p {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .close-event {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #c9a536;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-event:hover {
+            transform: scale(1.2);
+            color: #e0e0e0;
+        }
+
+        /* Responsive per la sezione eventi */
+        @media (max-width: 768px) {
+            .day-circle {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .day-name {
+                font-size: 0.8rem;
+            }
+            
+            .day-event-preview {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .day-circle {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .day-name {
+                font-size: 0.7rem;
+            }
+            
+            .day-event-preview {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="image/logo giallo marginato.png" alt="Bisca 888 Logo" style="height: 40px;">
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#activities">Attività</a></li>
+                    <li><a href="#rooms">Servizi</a></li>
+                    <li><a href="#events">Eventi</a></li>
+                    <li><a href="#cashier">VIP</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sezione Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Benvenuto al Bisca 888</h1>
+            <p>Il casinò più esclusivo di Roma</p>
+            <a href="#activities" class="btn">Scopri di più</a>
+        </div>
+    </section>
+
+    <!-- Animazione fiches -->
+    <div class="fiches-container" id="fiches-container"></div>
+
+    <!-- Sezione Attività -->
+    <section class="section" id="activities">
+        <div class="section-title">
+            <h2>Le nostre Attività</h2>
+        </div>
+        <div class="activities-grid">
+            <div class="activity-card">
+                <div class="activity-image" style="background-image: url('image/play/lucky.png');"></div>
+                <div class="activity-content">
+                    <h3><i class="fas fa-sync-alt"></i> Ruota della Fortuna</h3>
+                    <p>Prova la tua fortuna con la nostra esclusiva Ruota della Fortuna. Punta sui tuoi numeri preferiti e guarda girare la ruota per scoprire se la dea bendata è dalla tua parte.</p>
+                    <button class="rules-btn" data-game="roulette">Regole del gioco</button>
+                </div>
+            </div>
+            <div class="activity-card">
+                <div class="activity-image" style="background-image: url('image/play/slots.png');"></div>
+                <div class="activity-content">
+                    <h3><i class="fas fa-slot-machine"></i> Slot Machines</h3>
+                    <p>Un'ampia selezione di slot machines con temi diversi e jackpot progressivi. Dalle classiche alle più moderne, troverai sicuramente quella che fa per te.</p>
+                    <button class="rules-btn" data-game="slots">Regole del gioco</button>
+                </div>
+            </div>
+            <div class="activity-card">
+                <div class="activity-image" style="background-image: url('image/play/poker.png');"></div>
+                <div class="activity-content">
+                    <h3><i class="fas fa-cards"></i> Poker Texas Hold'em</h3>
+                    <p>Partecipa ai nostri tornei esclusivi di Poker Texas Hold'em o sfida altri giocatori ai tavoli cash. Abbiamo sale dedicate per ogni livello di esperienza.</p>
+                    <button class="rules-btn" data-game="poker">Regole del gioco</button>
+                </div>
+            </div>
+            <div class="activity-card">
+                <div class="activity-image" style="background-image: url('image/play/blackjack.png');"></div>
+                <div class="activity-content">
+                    <h3><i class="fas fa-crown"></i> Blackjack</h3>
+                    <p>Il classico gioco di carte contro il banco. Sfida i nostri croupier professionisti e raggiungi il magico 21 per vincere premi straordinari.</p>
+                    <button class="rules-btn" data-game="blackjack">Regole del gioco</button>
+                </div>
+            </div>
+            <div class="activity-card">
+                <div class="activity-image" style="background-image: url('image/play/horse.png');"></div>
+                <div class="activity-content">
+                    <h3><i class="fas fa-horse"></i> Corse dei Cavalli</h3>
+                    <p>Scommetti sui tuoi cavalli preferiti e vivi l'adrenalina della corsa in tempo reale attraverso i nostri schermi ad alta definizione.</p>
+                    <button class="rules-btn" data-game="horse">Regole del gioco</button>
+                </div>
+            </div>
+            <div class="activity-card">
+                <div class="activity-image" style="background-image: url('image/play/roulette.png');"></div>
+                <div class="activity-content">
+                    <h3><i class="fas fa-dice"></i> Roulette</h3>
+                    <p>Uno dei giochi più emozionanti del casinò. Piazza scommesse, indovina il colore e lasciati travolgere dall'entusiasmo di uno dei tavoli più vivaci di Bisca 888.</p>
+                    <button class="rules-btn" data-game="roulette-game">Regole del gioco</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Servizi -->
+    <section class="section" id="rooms">
+        <div class="section-title">
+            <h2>I nostri Servizi</h2>
+        </div>
+        <div class="rooms-carousel">
+            <div class="room-card">
+                <div class="room-image" style="background-image: url('image/service/veichle.png');"></div>
+                <div class="room-content">
+                    <h3>Servizio Trasporto di Lusso</h3>
+                    <p>Perfetta per divertirsi viaggiando con veicoli di terra e mare</p>
+                    <a href="prenotazioni-veicoli.html" class="btn">Prenota Ora</a>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-image" style="background-image: url('image/service/rooms.png');"></div>
+                <div class="room-content">
+                    <h3>Appartamenti di Lusso in Affitto</h3>
+                    <p>Concediti il privilegio di soggiorni raffinati in dimore esclusive, a partire da 300€ a settimana.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Sezione Eventi Settimanali -->
+    <section class="section" id="events">
+        <div class="section-title">
+            <h2>Eventi della Settimana</h2>
+        </div>
+        <div class="weekly-calendar">
+            <div class="calendar-track">
+                <div class="calendar-line"></div>
+                <div class="day-markers">
+                    <div class="day-marker" data-day="0">
+                        <div class="day-circle" id="day-0">
+                            <span class="day-name">Lun</span>
+                        </div>
+                        <div class="day-event-preview" id="preview-0"></div>
+                    </div>
+                    <div class="day-marker" data-day="1">
+                        <div class="day-circle" id="day-1">
+                            <span class="day-name">Mar</span>
+                        </div>
+                        <div class="day-event-preview" id="preview-1"></div>
+                    </div>
+                    <div class="day-marker" data-day="2">
+                        <div class="day-circle" id="day-2">
+                            <span class="day-name">Mer</span>
+                        </div>
+                        <div class="day-event-preview" id="preview-2"></div>
+                    </div>
+                    <div class="day-marker" data-day="3">
+                        <div class="day-circle" id="day-3">
+                            <span class="day-name">Gio</span>
+                        </div>
+                        <div class="day-event-preview" id="preview-3"></div>
+                    </div>
+                    <div class="day-marker" data-day="4">
+                        <div class="day-circle" id="day-4">
+                            <span class="day-name">Ven</span>
+                        </div>
+                        <div class="day-event-preview" id="preview-4"></div>
+                    </div>
+                    <div class="day-marker" data-day="5">
+                        <div class="day-circle" id="day-5">
+                            <span class="day-name">Sab</span>
+                        </div>
+                        <div class="day-event-preview" id="preview-5"></div>
+                    </div>
+                    <div class="day-marker" data-day="6">
+                        <div class="day-circle" id="day-6">
+                            <span class="day-name">Dom</span>
+                        </div>
+                        <div class="day-event-preview" id="preview-6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Eventi -->
+    <div class="event-popup" id="event-popup">
+        <div class="event-content">
+            <button class="close-event"><i class="fas fa-times"></i></button>
+            <div class="event-details">
+                <img src="" alt="Evento" class="event-flyer" id="event-flyer">
+                <h4 id="event-title"></h4>
+                <p class="event-time" id="event-time"><i class="fas fa-clock"></i> <span></span></p>
+                <p id="event-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sezione Cassa -->
+    <section class="section" id="cashier">
+        <div class="section-title">
+            <h2>Servizi VIP</h2>
+        </div>
+        <div class="cashier">
+            <h3>Diventa un membro VIP</h3>
+            <p>Accedi a un mondo di privilegi esclusivi con il nostro abbonamento VIP. Goditi un'esperienza di gioco senza precedenti con vantaggi riservati solo ai nostri membri più fedeli.</p>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <i class="fas fa-glass-martini-alt"></i>
+                    <p>Drink gratuiti al bar VIP</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-door-open"></i>
+                    <p>Accesso al Salone VIP esclusivo</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-gift"></i>
+                    <p>Bonus settimanali e omaggi</p>
+                </div>
+                <div class="benefit">
+                    <i class="fas fa-star"></i>
+                    <p>Inviti ad eventi esclusivi</p>
+                </div>
+            </div>
+            
+            <div class="price">5.000€</div>
+            <a href="#" class="btn">Abbonati Ora!</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo">
+                <img src="image/logo giallo marginato.png" alt="Bisca 888 Logo" style="height: 40px;">
+            </a>
+            <div class="footer-links">
+                <a href="#hero">Home</a>
+                <a href="#activities">Attività</a>
+                <a href="#rooms">Servizi</a>
+                <a href="#events">Eventi</a>
+                <a href="#cashier">VIP</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+            <p class="copyright">© 2025 Bisca 888 - Il casinò più esclusivo di Roma. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <!-- Audio Player -->
+    <div class="audio-player">
+        <button class="audio-control" id="audio-control">
+            <i class="fas fa-play" id="audio-icon"></i>
+        </button>
+        <div class="volume-control">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.1" value="0.1">
+        </div>
+    </div>
+
+    <!-- Rules Popup -->
+    <div class="rules-popup" id="roulette-rules">
+        <div class="rules-content">
+            <button class="close-rules"><i class="fas fa-times"></i></button>
+            <h4>Regole della Ruota della Fortuna</h4>
+            <p>La Ruota della Fortuna è un gioco emozionante dove i giocatori scommettono su quale spicchio si fermerà la ruota dopo essere stata girata.</p>
+            <p>Come giocare:</p>
+            <p>1. Piazza la tua puntata su uno o più numeri presenti sulla ruota</p>
+            <p>2. Il croupier farà girare la ruota</p>
+            <p>3. Se la ruota si ferma sul numero che hai scelto, vinci!</p>
+            <p>4. Il pagamento dipende dal numero di settori presenti sulla ruota e dalle probabilità associate</p>
+        </div>
+    </div>
+    
+    <div class="rules-popup" id="slots-rules">
+        <div class="rules-content">
+            <button class="close-rules"><i class="fas fa-times"></i></button>
+            <h4>Regole delle Slot Machines</h4>
+            <p>Le Slot Machines sono tra i giochi più popolari del casinò e offrono possibilità di vincite immediate.</p>
+            <p>Come giocare:</p>
+            <p>1. Inserisci le tue fiches nella macchina</p>
+            <p>2. Seleziona il numero di linee su cui vuoi scommettere</p>
+            <p>3. Premi il pulsante per far girare i rulli</p>
+            <p>4. Se i simboli si allineano secondo le combinazioni vincenti, vinci il premio corrispondente</p>
+        </div>
+    </div>
+    
+    <div class="rules-popup" id="poker-rules">
+        <div class="rules-content">
+            <button class="close-rules"><i class="fas fa-times"></i></button>
+            <img src="image/rules/texas-holdem.jpg" alt="Regole Poker Texas Hold'em" class="rules-image">
+            <h4>Regole del Poker Texas Hold'em</h4>
+            <p>Il Texas Hold'em è la variante di poker più diffusa al mondo. Combina le tue carte coperte con quelle comuni sul tavolo per formare la migliore mano.</p>
+            <p>Come giocare:</p>
+            <p>1. Ogni giocatore riceve due carte coperte</p>
+            <p>2. Si svolgono quattro round di puntate: pre-flop, flop (3 carte comuni), turn (4ª carta) e river (5ª carta)</p>
+            <p>3. I giocatori cercano di formare la migliore mano possibile usando le proprie carte e quelle comuni</p>
+            <p>4. Vince chi ha la combinazione più alta o chi rimane l'ultimo in gioco dopo che tutti hanno abbandonato</p>
+        </div>
+    </div>
+    
+    <div class="rules-popup" id="blackjack-rules">
+        <div class="rules-content">
+            <button class="close-rules"><i class="fas fa-times"></i></button>
+            <h4>Regole del Blackjack</h4>
+            <p>Il Blackjack è un gioco di carte dove l'obiettivo è battere il banco ottenendo un punteggio più vicino a 21 senza superarlo.</p>
+            <p>Come giocare:</p>
+            <p>1. Ricevi due carte, il banco riceve una carta scoperta e una coperta</p>
+            <p>2. Le carte numeriche valgono il loro valore, le figure valgono 10, l'Asso vale 1 o 11</p>
+            <p>3. Puoi chiedere altre carte ("hit") o fermarti ("stand")</p>
+            <p>4. Se superi 21 punti, perdi automaticamente ("bust")</p>
+            <p>5. Se non sballi, il banco scopre la seconda carta e deve pescare fino a raggiungere almeno 17</p>
+            <p>6. Vince chi ha il punteggio più alto senza superare 21</p>
+        </div>
+    </div>
+    
+    <div class="rules-popup" id="horse-rules">
+        <div class="rules-content">
+            <button class="close-rules"><i class="fas fa-times"></i></button>
+            <h4>Regole delle Corse dei Cavalli</h4>
+            <p>Le scommesse sulle corse dei cavalli sono un classico del mondo del gioco d'azzardo, combina fortuna e strategia.</p>
+            <p>Come giocare:</p>
+            <p>1. Scegli uno o più cavalli su cui scommettere</p>
+            <p>2. Decidi il tipo di scommessa: vincente, piazzato, accoppiata, ecc.</p>
+            <p>3. Piazza la tua puntata prima dell'inizio della corsa</p>
+            <p>4. Guarda la corsa sui nostri schermi ad alta definizione</p>
+            <p>5. Se il tuo cavallo arriva nella posizione prevista dalla tua scommessa, vinci!</p>
+        </div>
+    </div>
+    
+    <div class="rules-popup" id="roulette-game-rules">
+        <div class="rules-content">
+            <button class="close-rules"><i class="fas fa-times"></i></button>
+            <h4>Regole della Roulette</h4>
+            <p>La Roulette è uno dei giochi più iconici del casinò. Una pallina viene lanciata su una ruota che gira e i giocatori scommettono su dove si fermerà.</p>
+            <p>Come giocare:</p>
+            <p>1. Piazza le tue fiches sul tavolo della roulette in base alle tue scommesse</p>
+            <p>2. Puoi scommettere su un singolo numero, su combinazioni di numeri, colori, pari/dispari, ecc.</p>
+            <p>3. Il croupier lancia la pallina nella ruota che gira</p>
+            <p>4. Quando la pallina si ferma su un numero, vengono pagate le scommesse vincenti</p>
+            <p>5. I pagamenti variano in base al tipo di scommessa effettuata</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Menu mobile
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Animazione fiches
+        const fichesContainer = document.getElementById('fiches-container');
+        const ficheTypes = [
+            'image/fishes/1.png', // fiches1.png
+            'image/fishes/2.png', // fiches2.png
+            'image/fishes/3.png', // fiches3.png
+            'image/fishes/4.png', // fiches4.png
+            'image/fishes/5.png', // fiches5.png
+            'image/fishes/6.png', // fiches6.png
+            'image/fishes/7.png', // fiches7.png
+            'image/fishes/8.png', // fiches8.png
+            'image/fishes/9.png', // fiches9.png
+        ];
+
+        function createFiche() {
+            const fiche = document.createElement('div');
+            fiche.classList.add('fiche');
+            
+            // Seleziona casualmente un tipo di fiche
+            const randomFicheType = ficheTypes[Math.floor(Math.random() * ficheTypes.length)];
+            fiche.style.backgroundImage = `url(${randomFicheType})`;
+            
+            // Posizione iniziale casuale
+            const startPositionX = Math.random() * window.innerWidth;
+            fiche.style.left = `${startPositionX}px`;
+            
+            // Durata dell'animazione casuale
+            const animationDuration = Math.random() * 5 + 8; // Da 8 a 13 secondi
+            fiche.style.animationDuration = `${animationDuration}s`;
+            
+            fichesContainer.appendChild(fiche);
+            
+            // Rimuove la fiche dopo che è caduta completamente
+            setTimeout(() => {
+                fiche.remove();
+            }, animationDuration * 1000);
+        }
+
+        // Crea fiches a intervalli regolari
+        setInterval(createFiche, 100);
+        
+        // Crea alcune fiches iniziali
+        for (let i = 0; i < 10; i++) {
+            setTimeout(createFiche, i * 300);
+        }
+
+        // Audio player con inizio casuale
+        const audioControl = document.getElementById('audio-control');
+        const audioIcon = document.getElementById('audio-icon');
+        const volumeSlider = document.getElementById('volume-slider');
+        const audio = new Audio();
+        audio.loop = true;
+        audio.volume = 0.1;
+
+        // Per ovviare alle limitazioni dei browser moderni sull'autoplay
+        let audioAttempted = false;
+
+        // Funzione per gestire l'audio con inizio casuale
+        function toggleAudio() {
+            if (!audioAttempted) {
+                audio.src = 'background.mp3'; // Percorso da aggiornare con quello reale
+                
+                // Carica i metadati dell'audio per ottenere la durata
+                audio.addEventListener('loadedmetadata', function() {
+                    // Imposta un punto di inizio casuale (escludendo gli ultimi 30 secondi)
+                    const maxStartTime = Math.max(0, audio.duration - 30);
+                    const randomStartTime = Math.random() * maxStartTime;
+                    audio.currentTime = randomStartTime;
+                });
+                
+                audioAttempted = true;
+            }
+            
+            if (audio.paused) {
+                audio.play().then(() => {
+                    audioIcon.classList.remove('fa-play');
+                    audioIcon.classList.add('fa-pause');
+                }).catch(error => {
+                    console.log('Autoplay prevented:', error);
+                });
+            } else {
+                audio.pause();
+                audioIcon.classList.remove('fa-pause');
+                audioIcon.classList.add('fa-play');
+            }
+        }
+
+        // Click sul controllo audio
+        audioControl.addEventListener('click', toggleAudio);
+
+        // Cambio volume
+        volumeSlider.addEventListener('input', () => {
+            audio.volume = volumeSlider.value;
+        });
+
+        // Interazione utente con la pagina per abilitare l'audio
+        document.addEventListener('click', function() {
+            if (!audioAttempted) {
+                toggleAudio();
+            }
+        }, { once: true });
+        
+        // Scroll smooth per navigazione
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Effetto header durante lo scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+                header.style.padding = '10px 0';
+            } else {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                header.style.padding = '15px 0';
+            }
+        });
+
+        // Gestione popup regole del gioco
+        document.querySelectorAll('.rules-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const game = this.getAttribute('data-game');
+                const popup = document.getElementById(`${game}-rules`);
+                popup.style.display = 'flex';
+                
+                // Impedisce lo scroll della pagina quando il popup è aperto
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        document.querySelectorAll('.close-rules').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                const popup = this.closest('.rules-popup');
+                popup.style.display = 'none';
+                
+                // Ripristina lo scroll della pagina
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Chiudi anche cliccando fuori dal contenuto
+        document.querySelectorAll('.rules-popup').forEach(popup => {
+            popup.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Gestione eventi settimanali
+        document.addEventListener('DOMContentLoaded', function() {
+            // Struttura dati per gli eventi
+            // Popolare con i dati degli eventi quando disponibili
+            const weeklyEvents = [
+
+                null, // Lunedì - nessun evento
+
+                null, // Martedì - nessun evento
+
+                null, // Mercoledì - nessun evento
+
+                null, // Giovedì - nessun evento
+
+                null, // venerdì - nessun evento
+
+                {    
+                    // Sabato - Gara Mini Moto
+                    title: "Gara Mini Moto",
+                    description: "Scalda il motore e preparati a dare il massimo nella Gara Mini Moto più folle della città! Sabato ti aspetta un'entusiasmante competizione sull'ovale dietro il Casinò, dove solo i più agili, veloci e determinati riusciranno a completare tutti e 20 i giri e tagliare il traguardo per primi. La pista è stretta, le curve sono insidiose e ogni errore può costarti la vittoria! Porta la tua Mini Moto, affila i riflessi e dimostra chi è il vero re dell'asfalto. In palio ci sono ben 50.000€, ma solo uno potrà alzare il trofeo. Non è solo una gara, è una battaglia all'ultimo metro. Sei pronto a far rombare il motore e lasciare tutti dietro di te?",
+                    time: "21:00",
+                    image: "image/events/icon/minimotoicon.png",
+                    flyer: "image/events/flyer/minimotorace.png"
+                },
+
+                null  // Domenica - nessun evento
+
+            ];
+            
+            // Aggiorna la visualizzazione degli eventi sul calendario
+            function updateEventCalendar() {
+                weeklyEvents.forEach((event, index) => {
+                    const dayElement = document.getElementById(`day-${index}`);
+                    const previewElement = document.getElementById(`preview-${index}`);
+                    
+                    if (event) {
+                        // C'è un evento per questo giorno
+                        dayElement.classList.add('has-event');
+                        previewElement.classList.add('has-event');
+                        previewElement.style.backgroundImage = `url(${event.image})`;
+                        
+                        // Aggiungi event listener per aprire il popup
+                        previewElement.addEventListener('click', () => showEventDetails(index));
+                        dayElement.addEventListener('click', () => showEventDetails(index));
+                    } else {
+                        // Nessun evento per questo giorno
+                        dayElement.classList.remove('has-event');
+                        previewElement.classList.remove('has-event');
+                        previewElement.style.backgroundImage = '';
+                        
+                        // Rimuovi event listener se esistenti
+                        previewElement.replaceWith(previewElement.cloneNode(true));
+                        dayElement.replaceWith(dayElement.cloneNode(true));
+                    }
+                });
+            }
+            
+            // Mostra i dettagli dell'evento nel popup
+            function showEventDetails(dayIndex) {
+                const event = weeklyEvents[dayIndex];
+                if (!event) return;
+                
+                const popup = document.getElementById('event-popup');
+                const flyer = document.getElementById('event-flyer');
+                const title = document.getElementById('event-title');
+                const description = document.getElementById('event-description');
+                const timeElement = document.querySelector('#event-time span');
+                
+                // Popola il popup con i dettagli dell'evento
+                flyer.src = event.flyer;
+                title.textContent = event.title;
+                description.textContent = event.description;
+                
+                // Gestisci l'orario
+                if (event.time) {
+                    document.getElementById('event-time').style.display = 'block';
+                    timeElement.textContent = 'Inizio alle ore ' + event.time;
+                } else {
+                    document.getElementById('event-time').style.display = 'none';
+                }
+                
+                // Mostra il popup
+                popup.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Disabilita lo scroll della pagina
+            }
+            
+            // Chiudi il popup eventi al click sul pulsante di chiusura
+            document.querySelector('.close-event').addEventListener('click', function() {
+                document.getElementById('event-popup').style.display = 'none';
+                document.body.style.overflow = 'auto'; // Riabilita lo scroll della pagina
+            });
+            
+            // Chiudi il popup eventi cliccando fuori dal contenuto
+            document.getElementById('event-popup').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Inizializza il calendario
+            updateEventCalendar();
+        });
+    </script>
+</body>
+</html>

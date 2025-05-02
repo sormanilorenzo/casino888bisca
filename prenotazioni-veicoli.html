@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisca 888 - Il Casinò più esclusivo di Roma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e stili base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+                /* Personalizzazione barra di scorrimento */
+                ::-webkit-scrollbar {
+            width: 12px;
+            background-color: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #0a0a0a;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #000000;
+            border: 2px solid #c9a536;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #111111;
+            box-shadow: 0 0 5px rgba(201, 165, 54, 0.5);
+        }
+
+        /* Per Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #000000 #0a0a0a;
+        }
+
+        /* Importazione dei font */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid #c9a536;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #c9a536;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(201, 165, 54, 0.5);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 400;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #c9a536;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #c9a536;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #e0e0e0;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: url('image/hero.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 70px;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #c9a536;
+            text-shadow: 0 0 15px rgba(201, 165, 54, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #c9a536;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid #c9a536;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #c9a536;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(201, 165, 54, 0.3);
+        }
+
+        /* Animazione fiches */
+        .fiches-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .fiche {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            z-index: -1;
+            animation: falling linear infinite;
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(calc(100vh + 100px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 2px solid #c9a536;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            color: #c9a536;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #c9a536;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(201, 165, 54, 0.2);
+            color: #c9a536;
+            border-radius: 50%;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #c9a536;
+            color: #000;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: #888;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Audio player */
+        .audio-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(201, 165, 54, 0.5);
+        }
+
+        .audio-control {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #c9a536;
+            border: none;
+            color: #000;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .audio-control:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(201, 165, 54, 0.5);
+        }
+
+        .volume-control {
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .volume-slider {
+            width: 80px;
+            margin-left: 10px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            background: rgba(201, 165, 54, 0.3);
+            height: 5px;
+            border-radius: 5px;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #c9a536;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                border-bottom: 2px solid #c9a536;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .audio-player {
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .volume-control {
+                display: none;
+            }
+        }
+
+        /* Sezione servizi di trasporto */
+        .transport-services {
+            padding: 80px 20px;
+            background-color: #0d0d0d;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #c9a536;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(201, 165, 54, 0.5);
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .transport-options {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .option-card {
+            background-color: rgba(15, 15, 15, 0.9);
+            border: 1px solid rgba(201, 165, 54, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            width: 350px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: #c9a536;
+        }
+
+        .option-image {
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 5px;
+            height: 200px;
+        }
+
+        .option-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .option-card:hover .option-image img {
+            transform: scale(1.1);
+        }
+
+        .option-card h3 {
+            font-size: 1.8rem;
+            color: #c9a536;
+            margin-bottom: 15px;
+        }
+
+        .option-card p {
+            color: #e0e0e0;
+            margin-bottom: 25px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .transport-btn {
+            margin-top: 10px;
+        }
+
+        /* Form sezioni */
+        .transport-form-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .transport-form-section .container {
+            background-color: #111;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #c9a536;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .form-title {
+            font-size: 2rem;
+            color: #c9a536;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(201, 165, 54, 0.5);
+        }
+
+        .close-form {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #e0e0e0;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 10;
+        }
+
+        .close-form:hover {
+            color: #c9a536;
+        }
+
+        .luxury-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #c9a536;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid rgba(201, 165, 54, 0.3);
+            background-color: rgba(10, 10, 10, 0.8);
+            color: #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #c9a536;
+            box-shadow: 0 0 10px rgba(201, 165, 54, 0.5);
+        }
+
+        .form-result {
+            grid-column: 1 / -1;
+            background-color: rgba(201, 165, 54, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(201, 165, 54, 0.3);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-result p {
+            font-size: 1.2rem;
+            color: #c9a536;
+            margin: 5px 0;
+        }
+
+        .cost-note {
+            font-size: 0.9rem !important;
+            color: #888 !important;
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Yacht preview */
+        .yacht-preview {
+            grid-column: 1 / -1;
+            margin-bottom: 30px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid rgba(201, 165, 54, 0.3);
+        }
+
+        .yacht-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .luxury-form {
+                grid-template-columns: 1fr;
+            }
+
+            .yacht-preview {
+                height: 200px;
+            }
+        }
+
+        .aircraft-preview {
+            grid-column: 1 / -1;
+            margin-bottom: 30px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid rgba(201, 165, 54, 0.3);
+        }
+
+        .aircraft-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Aggiungi questa parte al responsive media query esistente */
+        @media (max-width: 768px) {
+            .aircraft-preview {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="image/logo giallo marginato.png" alt="Bisca 888 Logo" style="height: 40px;">
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sezione Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Benvenuto al Bisca 888</h1>
+            <p>Il casinò più esclusivo di Roma</p>
+            <a href="#" class="btn">Scopri di più</a>
+        </div>
+    </section>
+
+    <!-- Animazione fiches -->
+    <div class="fiches-container" id="fiches-container"></div>
+
+    <!-- Sezioni di Trasporto di Lusso -->
+    <section class="transport-services">
+        <div class="container">
+            <h2 class="section-title">I Nostri Servizi di Trasporto di Lusso</h2>
+            <p class="section-description">Scegli tra i nostri esclusivi servizi di trasporto per un'esperienza indimenticabile</p>
+            
+            <div class="transport-options">
+                <div class="option-card" id="limousine-card">
+                    <div class="option-image">
+                        <img src="image/veichle/limousine.png" alt="Limousine di lusso">
+                    </div>
+                    <h3>Limousine di Lusso</h3>
+                    <p>Viaggia con stile e comfort nelle nostre eleganti limousine</p>
+                    <button class="btn transport-btn" onclick="showTransportForm('limousine')">Prenota Ora</button>
+                </div>
+                
+                <div class="option-card" id="yacht-card">
+                    <div class="option-image">
+                        <img src="image/veichle/predator108.png" alt="Yacht di lusso">
+                    </div>
+                    <h3>Yacht Esclusivi</h3>
+                    <p>Naviga in acque cristalline con i nostri yacht di lusso</p>
+                    <button class="btn transport-btn" onclick="showTransportForm('yacht')">Prenota Ora</button>
+                </div>
+
+                <div class="option-card" id="aircraft-card">
+                    <div class="option-image">
+                        <img src="image/veichle/planepreview.png" alt="Velivoli privati">
+                    </div>
+                    <h3>Velivoli Privati</h3>
+                    <p>Solca i cieli con i nostri esclusivi aerei privati</p>
+                    <button class="btn transport-btn" onclick="showTransportForm('aircraft')">Prenota Ora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Limousine -->
+    <section id="limousine-form-section" class="transport-form-section">
+        <div class="container">
+            <h2 class="form-title">Prenotazione Limousine</h2>
+            <button class="close-form" onclick="hideTransportForm('limousine')"><i class="fas fa-times"></i></button>
+            
+            <form id="limousine-form" class="luxury-form">
+                <div class="form-group">
+                    <label for="limo-start">Indirizzo di Partenza:</label>
+                    <input type="text" id="limo-start" name="limo-start" placeholder="Inserisci indirizzo o civico di partenza" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="limo-destination">Indirizzo di Arrivo:</label>
+                    <input type="text" id="limo-destination" name="limo-destination" placeholder="Inserisci indirizzo o civico di arrivo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="limo-distance">Distanza (km):</label>
+                    <input type="number" id="limo-distance" name="limo-distance" min="1" placeholder="Inserisci la distanza" required onchange="calculateLimoCost()">
+                </div>
+
+                <div class="form-group">
+                    <label for="limo-passengers">Numero di Passeggeri:</label>
+                    <input type="number" id="limo-passengers" name="limo-passengers" min="1" max="4" value="1" placeholder="Max 4 persone" required onchange="calculateLimoCost()">
+                </div>
+                
+                <div class="form-result">
+                    <p>Costo stimato: <span id="limo-cost">0</span> €</p>
+                    <p class="cost-note">* 500€ al km + 1000€ per persona (max 4 persone)</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="limo-date">Data e Ora:</label>
+                    <input type="datetime-local" id="limo-date" name="limo-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="limo-name">Nome e Cognome:</label>
+                    <input type="text" id="limo-name" name="limo-name" placeholder="Inserisci il tuo nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="limo-contact">Numero di Contatto:</label>
+                    <input type="text" id="limo-contact" name="limo-contact" placeholder="Inserisci il tuo numero" required>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Invia Richiesta</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Form Yacht -->
+    <section id="yacht-form-section" class="transport-form-section">
+        <div class="container">
+            <h2 class="form-title">Prenotazione Yacht</h2>
+            <button class="close-form" onclick="hideTransportForm('yacht')"><i class="fas fa-times"></i></button>
+            
+            <div class="yacht-preview">
+                <img id="yacht-preview-image" src="image/veichle/predator108.png" alt="Yacht selezionato">
+            </div>
+            
+            <form id="yacht-form" class="luxury-form">
+                <div class="form-group">
+                    <label for="yacht-model">Modello Yacht:</label>
+                    <select id="yacht-model" name="yacht-model" required onchange="updateYachtPreview()">
+                        <option value="">Seleziona uno yacht</option>
+                        <option value="yacht1" data-image="image/veichle/predator108.png">Predator 108 - 70ft</option>
+                    </select>                    
+                </div>
+                
+                <div class="form-group">
+                    <label for="yacht-departure">Porto di Partenza:</label>
+                    <input type="text" id="yacht-departure" name="yacht-departure" placeholder="Inserisci il porto di partenza" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="yacht-arrival">Porto di Arrivo:</label>
+                    <input type="text" id="yacht-arrival" name="yacht-arrival" placeholder="Inserisci il porto di arrivo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="yacht-distance">Distanza (km):</label>
+                    <input type="number" id="yacht-distance" name="yacht-distance" min="1" placeholder="Inserisci la distanza" required onchange="calculateYachtCost()">
+                </div>
+                
+                <div class="form-group">
+                    <label for="yacht-cruise">Tipo di Viaggio:</label>
+                    <select id="yacht-cruise" name="yacht-cruise" required onchange="calculateYachtCost()">
+                        <option value="standard">Trasporto Standard</option>
+                        <option value="cruise">Crociera con Soste</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="yacht-hours">Ore di Noleggio:</label>
+                    <input type="number" id="yacht-hours" name="yacht-hours" min="1" max="24" value="4" required onchange="calculateYachtCost()">
+                </div>
+
+                <div class="form-group">
+                    <label for="yacht-passengers">Numero di Passeggeri:</label>
+                    <input type="number" id="yacht-passengers" name="yacht-passengers" min="1" max="12" value="1" placeholder="Max 12 persone" required onchange="calculateYachtCost()">
+                </div>
+                
+                <div class="form-result">
+                    <p>Costo stimato: <span id="yacht-cost">0</span> €</p>
+                    <p class="cost-note">* 1700€ al km + 10.000€ per ogni ora di noleggio + 3000€ per persona (max 12 persone)</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="yacht-date">Data e Ora:</label>
+                    <input type="datetime-local" id="yacht-date" name="yacht-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="yacht-name">Nome e Cognome:</label>
+                    <input type="text" id="yacht-name" name="yacht-name" placeholder="Inserisci il tuo nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="yacht-contact">Numero di Contatto:</label>
+                    <input type="text" id="yacht-contact" name="yacht-contact" placeholder="Inserisci il tuo numero" required>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Invia Richiesta</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Form Velivoli -->
+    <section id="aircraft-form-section" class="transport-form-section">
+        <div class="container">
+            <h2 class="form-title">Prenotazione Velivolo</h2>
+            <button class="close-form" onclick="hideTransportForm('aircraft')"><i class="fas fa-times"></i></button>
+            
+            <div class="aircraft-preview">
+                <img id="aircraft-preview-image" src="image/veichle/planepreview.png" alt="Velivolo selezionato">
+            </div>
+            
+            <form id="aircraft-form" class="luxury-form">
+                <div class="form-group">
+                    <label for="aircraft-model">Modello Velivolo:</label>
+                    <select id="aircraft-model" name="aircraft-model" required onchange="updateAircraftPreview()">
+                        <option value="">Seleziona un velivolo</option>
+                        <option value="cessna172" data-image="image/veichle/cessna172.jpeg">Cessna 172</option>
+                        <option value="cirrussr22" data-image="image/veichle/cirrussr22.jpg">Cirrus SR-22</option>
+                    </select>                    
+                </div>
+                
+                <div class="form-group">
+                    <label for="aircraft-departure">Aeroporto di Partenza:</label>
+                    <input type="text" id="aircraft-departure" name="aircraft-departure" placeholder="Inserisci l'aeroporto di partenza" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="aircraft-arrival">Aeroporto di Arrivo:</label>
+                    <input type="text" id="aircraft-arrival" name="aircraft-arrival" placeholder="Inserisci l'aeroporto di arrivo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="aircraft-distance">Distanza (km):</label>
+                    <input type="number" id="aircraft-distance" name="aircraft-distance" min="1" placeholder="Inserisci la distanza" required onchange="calculateAircraftCost()">
+                </div>
+                
+                <div class="form-group">
+                    <label for="aircraft-flight-type">Tipo di Viaggio:</label>
+                    <select id="aircraft-flight-type" name="aircraft-flight-type" required onchange="calculateAircraftCost()">
+                        <option value="direct">Volo Diretto</option>
+                        <option value="scenic">Tour Panoramico</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="aircraft-hours">Ore di Volo:</label>
+                    <input type="number" id="aircraft-hours" name="aircraft-hours" min="1" max="24" value="2" required onchange="calculateAircraftCost()">
+                </div>
+
+                <div class="form-group">
+                    <label for="aircraft-passengers">Numero di Passeggeri:</label>
+                    <input type="number" id="aircraft-passengers" name="aircraft-passengers" min="1" max="4" value="1" placeholder="Max 4 persone" required onchange="calculateAircraftCost()">
+                </div>
+                
+                <div class="form-result">
+                    <p>Costo stimato: <span id="aircraft-cost">0</span> €</p>
+                    <p class="cost-note">* 2000€ al km + 8.000€ per ogni ora di volo + 2500€ per persona (max 4 persone)</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="aircraft-date">Data e Ora:</label>
+                    <input type="datetime-local" id="aircraft-date" name="aircraft-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="aircraft-name">Nome e Cognome:</label>
+                    <input type="text" id="aircraft-name" name="aircraft-name" placeholder="Inserisci il tuo nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="aircraft-contact">Numero di Contatto:</label>
+                    <input type="text" id="aircraft-contact" name="aircraft-contact" placeholder="Inserisci il tuo numero" required>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Invia Richiesta</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo">
+                <img src="image/logo giallo marginato.png" alt="Bisca 888 Logo" style="height: 40px;">
+            </a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+            <p class="copyright">© 2025 Bisca 888 - Il casinò più esclusivo di Roma. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <!-- Audio Player -->
+    <div class="audio-player">
+        <button class="audio-control" id="audio-control">
+            <i class="fas fa-play" id="audio-icon"></i>
+        </button>
+        <div class="volume-control">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.1" value="0.1">
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Menu mobile
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Animazione fiches
+        const fichesContainer = document.getElementById('fiches-container');
+        const ficheTypes = [
+            'image/fishes/1.png', // fiches1.png
+            'image/fishes/2.png', // fiches2.png
+            'image/fishes/3.png', // fiches3.png
+            'image/fishes/4.png', // fiches4.png
+            'image/fishes/5.png', // fiches5.png
+            'image/fishes/6.png', // fiches6.png
+            'image/fishes/7.png', // fiches7.png
+            'image/fishes/8.png', // fiches8.png
+            'image/fishes/9.png', // fiches9.png
+        ];
+
+        function createFiche() {
+            const fiche = document.createElement('div');
+            fiche.classList.add('fiche');
+            
+            // Seleziona casualmente un tipo di fiche
+            const randomFicheType = ficheTypes[Math.floor(Math.random() * ficheTypes.length)];
+            fiche.style.backgroundImage = `url(${randomFicheType})`;
+            
+            // Posizione iniziale casuale
+            const startPositionX = Math.random() * window.innerWidth;
+            fiche.style.left = `${startPositionX}px`;
+            
+            // Durata dell'animazione casuale
+            const animationDuration = Math.random() * 5 + 8; // Da 8 a 13 secondi
+            fiche.style.animationDuration = `${animationDuration}s`;
+            
+            fichesContainer.appendChild(fiche);
+            
+            // Rimuove la fiche dopo che è caduta completamente
+            setTimeout(() => {
+                fiche.remove();
+            }, animationDuration * 1000);
+        }
+
+        // Crea fiches a intervalli regolari
+        setInterval(createFiche, 100);
+
+        // Crea alcune fiches iniziali
+        for (let i = 0; i < 10; i++) {
+            setTimeout(createFiche, i * 300);
+        }
+
+        // Audio player con inizio casuale
+        const audioControl = document.getElementById('audio-control');
+        const audioIcon = document.getElementById('audio-icon');
+        const volumeSlider = document.getElementById('volume-slider');
+        const audio = new Audio();
+        audio.loop = true;
+        audio.volume = 0.1;
+
+        // Per ovviare alle limitazioni dei browser moderni sull'autoplay
+        let audioAttempted = false;
+
+        // Funzione per gestire l'audio con inizio casuale
+        function toggleAudio() {
+            if (!audioAttempted) {
+                audio.src = 'background.mp3'; // Percorso da aggiornare con quello reale
+                
+                // Carica i metadati dell'audio per ottenere la durata
+                audio.addEventListener('loadedmetadata', function() {
+                    // Imposta un punto di inizio casuale (escludendo gli ultimi 30 secondi)
+                    const maxStartTime = Math.max(0, audio.duration - 30);
+                    const randomStartTime = Math.random() * maxStartTime;
+                    audio.currentTime = randomStartTime;
+                });
+                
+                audioAttempted = true;
+            }
+            
+            if (audio.paused) {
+                audio.play().then(() => {
+                    audioIcon.classList.remove('fa-play');
+                    audioIcon.classList.add('fa-pause');
+                }).catch(error => {
+                    console.log('Autoplay prevented:', error);
+                });
+            } else {
+                audio.pause();
+                audioIcon.classList.remove('fa-pause');
+                audioIcon.classList.add('fa-play');
+            }
+        }
+
+        // Click sul controllo audio
+        audioControl.addEventListener('click', toggleAudio);
+
+        // Cambio volume
+        volumeSlider.addEventListener('input', () => {
+            audio.volume = volumeSlider.value;
+        });
+
+        // Interazione utente con la pagina per abilitare l'audio
+        document.addEventListener('click', function() {
+            if (!audioAttempted) {
+                toggleAudio();
+            }
+        }, { once: true });
+
+        // Effetto header durante lo scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+                header.style.padding = '10px 0';
+            } else {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                header.style.padding = '15px 0';
+            }
+        });
+
+        // Mostra il form di trasporto selezionato
+        function showTransportForm(type) {
+            if (type === 'limousine') {
+                document.getElementById('limousine-form-section').style.display = 'flex';
+            } else if (type === 'yacht') {
+                document.getElementById('yacht-form-section').style.display = 'flex';
+            } else if (type === 'aircraft') {
+                document.getElementById('aircraft-form-section').style.display = 'flex';
+            }
+            // Impedisce lo scroll della pagina
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Nasconde il form di trasporto
+        function hideTransportForm(type) {
+            if (type === 'limousine') {
+                document.getElementById('limousine-form-section').style.display = 'none';
+            } else if (type === 'yacht') {
+                document.getElementById('yacht-form-section').style.display = 'none';
+            } else if (type === 'aircraft') {
+                document.getElementById('aircraft-form-section').style.display = 'none';
+            }
+            // Riattiva lo scroll della pagina
+            document.body.style.overflow = 'auto';
+        }
+
+        // Calcola il costo della limousine
+        function calculateLimoCost() {
+            const distance = parseFloat(document.getElementById('limo-distance').value) || 0;
+            const passengers = parseInt(document.getElementById('limo-passengers').value) || 1;
+            
+            const costPerKm = 500;
+            const costPerPassenger = 1000;
+            
+            // Calcolo del costo totale: (distanza * costo per km) + (passeggeri * costo per passeggero)
+            const totalCost = (distance * costPerKm) + (passengers * costPerPassenger);
+            
+            document.getElementById('limo-cost').textContent = totalCost.toLocaleString('it-IT');
+        }
+
+        // Aggiorna l'anteprima dello yacht
+        function updateYachtPreview() {
+            const yachtSelect = document.getElementById('yacht-model');
+            const selectedOption = yachtSelect.options[yachtSelect.selectedIndex];
+            
+            if (selectedOption.value) {
+                // Usa direttamente il percorso dell'immagine dall'attributo data-image
+                const imagePath = selectedOption.getAttribute('data-image');
+                document.getElementById('yacht-preview-image').src = imagePath;
+            }
+            calculateYachtCost();
+        }
+
+        // Calcola il costo dello yacht
+        function calculateYachtCost() {
+            const distance = parseFloat(document.getElementById('yacht-distance').value) || 0;
+            const hours = parseInt(document.getElementById('yacht-hours').value) || 4;
+            const passengers = parseInt(document.getElementById('yacht-passengers').value) || 1;
+            
+            const costPerKm = 1700;
+            const hourlyRate = 10000;
+            const costPerPassenger = 3000;
+            
+            // Calcolo del costo totale: (distanza * costo per km) + (ore * tariffa oraria) + (passeggeri * costo per passeggero)
+            let totalCost = (distance * costPerKm) + (hours * hourlyRate) + (passengers * costPerPassenger);
+            
+            document.getElementById('yacht-cost').textContent = totalCost.toLocaleString('it-IT');
+        }
+
+        // Aggiorna l'anteprima del velivolo
+        function updateAircraftPreview() {
+            const aircraftSelect = document.getElementById('aircraft-model');
+            const selectedOption = aircraftSelect.options[aircraftSelect.selectedIndex];
+            
+            if (selectedOption.value) {
+                // Usa direttamente il percorso dell'immagine dall'attributo data-image
+                const imagePath = selectedOption.getAttribute('data-image');
+                document.getElementById('aircraft-preview-image').src = imagePath;
+            }
+            calculateAircraftCost();
+        }
+
+        // Calcola il costo del velivolo
+        function calculateAircraftCost() {
+            const distance = parseFloat(document.getElementById('aircraft-distance').value) || 0;
+            const hours = parseInt(document.getElementById('aircraft-hours').value) || 2;
+            const passengers = parseInt(document.getElementById('aircraft-passengers').value) || 1;
+            const flightType = document.getElementById('aircraft-flight-type').value;
+            
+            const costPerKm = 2000;
+            const hourlyRate = 8000;
+            const costPerPassenger = 2500;
+            
+            // Calcolo del costo totale: (distanza * costo per km) + (ore * tariffa oraria) + (passeggeri * costo per passeggero)
+            let totalCost = (distance * costPerKm) + (hours * hourlyRate) + (passengers * costPerPassenger);
+            
+            // Aggiunta di un supplemento per i tour panoramici
+            if (flightType === 'scenic') {
+                totalCost *= 1.2; // 20% in più per tour panoramici
+            }
+            
+            document.getElementById('aircraft-cost').textContent = totalCost.toLocaleString('it-IT');
+        }
+
+        // Invia form limousine tramite webhook
+        document.getElementById('limousine-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                start: document.getElementById('limo-start').value,
+                destination: document.getElementById('limo-destination').value,
+                distance: document.getElementById('limo-distance').value,
+                passengers: document.getElementById('limo-passengers').value,
+                cost: document.getElementById('limo-cost').textContent,
+                date: document.getElementById('limo-date').value,
+                name: document.getElementById('limo-name').value,
+                contact: document.getElementById('limo-contact').value
+            };
+            
+            // URL del webhook Discord per la limousine
+            const webhookUrl = 'https://discord.com/api/webhooks/1367148779324706846/8o5FkOY4Zy6iN7gPv8mVgjkz_-as4EWnRdT02WiPMmIc0htnIlOhrw2NCRdnc8R_qQus';
+            
+            // Creazione dell'embed per Discord
+            const embed = {
+                title: "Nuova Prenotazione Limousine",
+                color: 13347533, // Colore in decimal (corrispondente a #c9a536)
+                fields: [
+                    { name: "Cliente", value: formData.name, inline: true },
+                    { name: "Contatto", value: formData.contact, inline: true },
+                    { name: "Data e Ora", value: new Date(formData.date).toLocaleString('it-IT'), inline: false },
+                    { name: "Partenza", value: formData.start, inline: true },
+                    { name: "Destinazione", value: formData.destination, inline: true },
+                    { name: "Distanza", value: formData.distance + " km", inline: true },
+                    { name: "Passeggeri", value: formData.passengers, inline: true },
+                    { name: "Costo Stimato", value: formData.cost + " €", inline: true }
+                ],
+                timestamp: new Date().toISOString()
+            };
+            
+            // Invio della richiesta al webhook
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: "Bisca 888 - Prenotazioni Limousine",
+                    embeds: [embed]
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Prenotazione limousine inviata con successo!");
+                    document.getElementById('limousine-form').reset();
+                    hideTransportForm('limousine');
+                } else {
+                    alert("Si è verificato un errore durante l'invio della prenotazione.");
+                }
+            })
+            .catch(error => {
+                console.error('Errore:', error);
+                alert("Si è verificato un errore durante l'invio della prenotazione.");
+            });
+        });
+
+        // Invia form yacht tramite webhook
+        document.getElementById('yacht-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                model: document.getElementById('yacht-model').options[document.getElementById('yacht-model').selectedIndex].text,
+                departure: document.getElementById('yacht-departure').value,
+                arrival: document.getElementById('yacht-arrival').value,
+                distance: document.getElementById('yacht-distance').value,
+                cruiseType: document.getElementById('yacht-cruise').options[document.getElementById('yacht-cruise').selectedIndex].text,
+                hours: document.getElementById('yacht-hours').value,
+                passengers: document.getElementById('yacht-passengers').value,
+                cost: document.getElementById('yacht-cost').textContent,
+                date: document.getElementById('yacht-date').value,
+                name: document.getElementById('yacht-name').value,
+                contact: document.getElementById('yacht-contact').value
+            };
+            
+            // URL del webhook Discord per lo yacht
+            const webhookUrl = 'https://discord.com/api/webhooks/1367149049576423474/hQz4HbmpdCdPWwTHi_F-7s0McuHQROALSbHl750VY8rGjMMMq9HYP3TCaFmi1-tJdwA7';
+            
+            // Creazione dell'embed per Discord
+            const embed = {
+                title: "Nuova Prenotazione Yacht",
+                color: 13347533, // Colore in decimal (corrispondente a #c9a536)
+                fields: [
+                    { name: "Cliente", value: formData.name, inline: true },
+                    { name: "Contatto", value: formData.contact, inline: true },
+                    { name: "Data e Ora", value: new Date(formData.date).toLocaleString('it-IT'), inline: false },
+                    { name: "Modello Yacht", value: formData.model, inline: true },
+                    { name: "Porto di Partenza", value: formData.departure, inline: true },
+                    { name: "Porto di Arrivo", value: formData.arrival, inline: true },
+                    { name: "Distanza", value: formData.distance + " km", inline: true },
+                    { name: "Tipo di Viaggio", value: formData.cruiseType, inline: true },
+                    { name: "Ore di Noleggio", value: formData.hours + " ore", inline: true },
+                    { name: "Passeggeri", value: formData.passengers, inline: true },
+                    { name: "Costo Stimato", value: formData.cost + " €", inline: true }
+                ],
+                timestamp: new Date().toISOString()
+            };
+            
+            // Invio della richiesta al webhook
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: "Bisca 888 - Prenotazioni Yacht",
+                    embeds: [embed]
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Prenotazione yacht inviata con successo!");
+                    document.getElementById('yacht-form').reset();
+                    hideTransportForm('yacht');
+                } else {
+                    alert("Si è verificato un errore durante l'invio della prenotazione.");
+                }
+            })
+            .catch(error => {
+                console.error('Errore:', error);
+                alert("Si è verificato un errore durante l'invio della prenotazione.");
+            });
+        });
+
+        // Invia form velivolo tramite webhook
+        document.getElementById('aircraft-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                model: document.getElementById('aircraft-model').options[document.getElementById('aircraft-model').selectedIndex].text,
+                departure: document.getElementById('aircraft-departure').value,
+                arrival: document.getElementById('aircraft-arrival').value,
+                distance: document.getElementById('aircraft-distance').value,
+                flightType: document.getElementById('aircraft-flight-type').options[document.getElementById('aircraft-flight-type').selectedIndex].text,
+                hours: document.getElementById('aircraft-hours').value,
+                passengers: document.getElementById('aircraft-passengers').value,
+                cost: document.getElementById('aircraft-cost').textContent,
+                date: document.getElementById('aircraft-date').value,
+                name: document.getElementById('aircraft-name').value,
+                contact: document.getElementById('aircraft-contact').value
+            };
+            
+            // URL del webhook Discord per il velivolo
+            const webhookUrl = 'https://discord.com/api/webhooks/1367149164802342943/M85lI-GaAChDJcpLUUwAuc4i5clVeeYmMJ8wP2179jFr0twY3jAvPjKbHrMhE2l0cqab';
+            
+            // Creazione dell'embed per Discord
+            const embed = {
+                title: "Nuova Prenotazione Velivolo",
+                color: 13347533, // Colore in decimal (corrispondente a #c9a536)
+                fields: [
+                    { name: "Cliente", value: formData.name, inline: true },
+                    { name: "Contatto", value: formData.contact, inline: true },
+                    { name: "Data e Ora", value: new Date(formData.date).toLocaleString('it-IT'), inline: false },
+                    { name: "Modello Velivolo", value: formData.model, inline: true },
+                    { name: "Aeroporto di Partenza", value: formData.departure, inline: true },
+                    { name: "Aeroporto di Arrivo", value: formData.arrival, inline: true },
+                    { name: "Distanza", value: formData.distance + " km", inline: true },
+                    { name: "Tipo di Viaggio", value: formData.flightType, inline: true },
+                    { name: "Ore di Volo", value: formData.hours + " ore", inline: true },
+                    { name: "Passeggeri", value: formData.passengers, inline: true },
+                    { name: "Costo Stimato", value: formData.cost + " €", inline: true }
+                ],
+                timestamp: new Date().toISOString()
+            };
+            
+            // Invio della richiesta al webhook
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: "Bisca 888 - Prenotazioni Velivoli",
+                    embeds: [embed]
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Prenotazione velivolo inviata con successo!");
+                    document.getElementById('aircraft-form').reset();
+                    hideTransportForm('aircraft');
+                } else {
+                    alert("Si è verificato un errore durante l'invio della prenotazione.");
+                }
+            })
+            .catch(error => {
+                console.error('Errore:', error);
+                alert("Si è verificato un errore durante l'invio della prenotazione.");
+            });
+        });
+    </script>
+</body>
+</html>
